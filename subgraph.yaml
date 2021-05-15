@@ -1,0 +1,70 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Contract
+    network: rinkeby
+    source:
+      address: "0xC80a7f519b10bE09D0f7B43bF91C559131Db0E11"
+      abi: Contract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - AdminFeeUpdated
+        - Approval
+        - ApprovalForAll
+        - LoanLiquidated
+        - LoanRepaid
+        - LoanStarted
+        - OwnershipTransferred
+        - Paused
+        - PauserAdded
+        - PauserRemoved
+        - Transfer
+        - Unpaused
+        - WhiteHandleList
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: AdminFeeUpdated(uint256)
+          handler: handleAdminFeeUpdated
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: LoanLiquidated(uint256,address,address,uint256,uint256,uint256,uint256,address)
+          handler: handleLoanLiquidated
+        - event: LoanRepaid(uint256,address,address,uint256,uint256,uint256,uint256,address,address)
+          handler: handleLoanRepaid
+        - event: LoanStarted(uint256,address,address,uint256,uint256,uint256,uint256,uint256,uint256,address,address,bool)
+          handler: handleLoanStarted
+        - event: OwnershipTransferred(address,address)
+          handler: handleOwnershipTransferred
+        - event: Paused(address)
+          handler: handlePaused
+        - event: PauserAdded(indexed address)
+          handler: handlePauserAdded
+        - event: PauserRemoved(indexed address)
+          handler: handlePauserRemoved
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: Unpaused(address)
+          handler: handleUnpaused
+      file: ./src/mapping.ts
+
+
+
+
+export class WhitelistNFTContractCall extends ethereum.Call {
+  get inputs(): WhitelistNFTContractCall__Inputs {
+    return new WhitelistNFTContractCall__Inputs(this);
+  }
+
+  get outputs(): WhitelistNFTContractCall__Outputs {
+    return new WhitelistNFTContractCall__Outputs(this);
+  }
+}

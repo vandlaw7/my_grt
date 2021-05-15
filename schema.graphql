@@ -1,0 +1,39 @@
+type ExampleEntity @entity {
+  id: ID!
+  count: BigInt!
+  newAdminFee: BigInt! # uint256
+  loanId: BigInt!
+  borrower: String!
+  lender: String!
+  loanPrincipalAmount: BigInt!
+  maximumRepaymentAmount: 
+  nftCollateralId:
+  loanStartTime:
+  loanDuration:
+  loanInterestRateForDurationInBasisPoints:
+  nftCollateralContract:
+  loanERC20Denomination:
+  interestIsProRated: 
+}
+
+
+event LoanStarted(
+        uint256 loanId,
+        address borrower,
+        address lender,
+        uint256 loanPrincipalAmount,
+        uint256 maximumRepaymentAmount,
+        uint256 nftCollateralId,
+        uint256 loanStartTime,
+        uint256 loanDuration,
+        uint256 loanInterestRateForDurationInBasisPoints,
+        address nftCollateralContract,
+        address loanERC20Denomination,
+        bool interestIsProRated
+);
+
+
+
+    function whitelistNFTContract(address _nftContract, bool _setAsWhitelisted) external onlyOwner {
+        nftContractIsWhitelisted[_nftContract] = _setAsWhitelisted;
+    }
