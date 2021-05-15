@@ -359,11 +359,19 @@
     "name": "Unpaused",
     "type": "event"
   },
-  { "payable": true, "stateMutability": "payable", "type": "fallback" },
+  {
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "fallback"
+  },
   {
     "constant": false,
     "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "addPauser",
     "outputs": [],
@@ -375,7 +383,13 @@
     "constant": true,
     "inputs": [],
     "name": "adminFeeInBasisPoints",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -383,8 +397,16 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "address", "name": "to", "type": "address" },
-      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
     ],
     "name": "approve",
     "outputs": [],
@@ -395,10 +417,20 @@
   {
     "constant": true,
     "inputs": [
-      { "internalType": "address", "name": "owner", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
     ],
     "name": "balanceOf",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -421,7 +453,11 @@
         "name": "_nftCollateralId",
         "type": "uint256"
       },
-      { "internalType": "uint256", "name": "_loanDuration", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "_loanDuration",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "_loanInterestRateForDurationInBasisPoints",
@@ -447,13 +483,21 @@
         "name": "_loanERC20Denomination",
         "type": "address"
       },
-      { "internalType": "address", "name": "_lender", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "_lender",
+        "type": "address"
+      },
       {
         "internalType": "bytes",
         "name": "_borrowerSignature",
         "type": "bytes"
       },
-      { "internalType": "bytes", "name": "_lenderSignature", "type": "bytes" }
+      {
+        "internalType": "bytes",
+        "name": "_lenderSignature",
+        "type": "bytes"
+      }
     ],
     "name": "beginLoan",
     "outputs": [],
@@ -464,7 +508,11 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "uint256", "name": "_nonce", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      }
     ],
     "name": "cancelLoanCommitmentBeforeLoanHasBegun",
     "outputs": [],
@@ -474,9 +522,21 @@
   },
   {
     "constant": true,
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "erc20CurrencyIsWhitelisted",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -484,10 +544,20 @@
   {
     "constant": true,
     "inputs": [
-      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
     ],
     "name": "getApproved",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -496,7 +566,13 @@
     "constant": true,
     "inputs": [],
     "name": "getChainID",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -504,10 +580,20 @@
   {
     "constant": true,
     "inputs": [
-      { "internalType": "uint256", "name": "_loanId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_loanId",
+        "type": "uint256"
+      }
     ],
     "name": "getPayoffAmount",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -515,11 +601,25 @@
   {
     "constant": true,
     "inputs": [
-      { "internalType": "address", "name": "_user", "type": "address" },
-      { "internalType": "uint256", "name": "_nonce", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      }
     ],
     "name": "getWhetherNonceHasBeenUsedForUser",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -527,11 +627,25 @@
   {
     "constant": true,
     "inputs": [
-      { "internalType": "address", "name": "owner", "type": "address" },
-      { "internalType": "address", "name": "operator", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "operator",
+        "type": "address"
+      }
     ],
     "name": "isApprovedForAll",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -540,7 +654,13 @@
     "constant": true,
     "inputs": [],
     "name": "isOwner",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -548,10 +668,20 @@
   {
     "constant": true,
     "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "isPauser",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -574,11 +704,25 @@
         "name": "_nftCollateralContract",
         "type": "address"
       },
-      { "internalType": "address", "name": "_borrower", "type": "address" },
-      { "internalType": "bytes", "name": "_borrowerSignature", "type": "bytes" }
+      {
+        "internalType": "address",
+        "name": "_borrower",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_borrowerSignature",
+        "type": "bytes"
+      }
     ],
     "name": "isValidBorrowerSignature",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -601,7 +745,11 @@
         "name": "_nftCollateralId",
         "type": "uint256"
       },
-      { "internalType": "uint256", "name": "_loanDuration", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "_loanDuration",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "_loanInterestRateForDurationInBasisPoints",
@@ -612,7 +760,11 @@
         "name": "_adminFeeInBasisPoints",
         "type": "uint256"
       },
-      { "internalType": "uint256", "name": "_lenderNonce", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "_lenderNonce",
+        "type": "uint256"
+      },
       {
         "internalType": "address",
         "name": "_nftCollateralContract",
@@ -623,12 +775,30 @@
         "name": "_loanERC20Denomination",
         "type": "address"
       },
-      { "internalType": "address", "name": "_lender", "type": "address" },
-      { "internalType": "bool", "name": "_interestIsProRated", "type": "bool" },
-      { "internalType": "bytes", "name": "_lenderSignature", "type": "bytes" }
+      {
+        "internalType": "address",
+        "name": "_lender",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "_interestIsProRated",
+        "type": "bool"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_lenderSignature",
+        "type": "bytes"
+      }
     ],
     "name": "isValidLenderSignature",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -636,7 +806,11 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "uint256", "name": "_loanId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_loanId",
+        "type": "uint256"
+      }
     ],
     "name": "liquidateOverdueLoan",
     "outputs": [],
@@ -646,10 +820,20 @@
   },
   {
     "constant": true,
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "name": "loanIdToLoan",
     "outputs": [
-      { "internalType": "uint256", "name": "loanId", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "loanId",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "loanPrincipalAmount",
@@ -665,8 +849,16 @@
         "name": "nftCollateralId",
         "type": "uint256"
       },
-      { "internalType": "uint64", "name": "loanStartTime", "type": "uint64" },
-      { "internalType": "uint32", "name": "loanDuration", "type": "uint32" },
+      {
+        "internalType": "uint64",
+        "name": "loanStartTime",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint32",
+        "name": "loanDuration",
+        "type": "uint32"
+      },
       {
         "internalType": "uint32",
         "name": "loanInterestRateForDurationInBasisPoints",
@@ -687,8 +879,16 @@
         "name": "loanERC20Denomination",
         "type": "address"
       },
-      { "internalType": "address", "name": "borrower", "type": "address" },
-      { "internalType": "bool", "name": "interestIsProRated", "type": "bool" }
+      {
+        "internalType": "address",
+        "name": "borrower",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "interestIsProRated",
+        "type": "bool"
+      }
     ],
     "payable": false,
     "stateMutability": "view",
@@ -696,9 +896,21 @@
   },
   {
     "constant": true,
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "name": "loanRepaidOrLiquidated",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -707,7 +919,13 @@
     "constant": true,
     "inputs": [],
     "name": "maximumLoanDuration",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -716,7 +934,13 @@
     "constant": true,
     "inputs": [],
     "name": "maximumNumberOfActiveLoans",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -725,16 +949,34 @@
     "constant": true,
     "inputs": [],
     "name": "name",
-    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
   },
   {
     "constant": true,
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "nftContractIsWhitelisted",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -743,7 +985,13 @@
     "constant": true,
     "inputs": [],
     "name": "owner",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -751,10 +999,20 @@
   {
     "constant": true,
     "inputs": [
-      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
     ],
     "name": "ownerOf",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -772,7 +1030,13 @@
     "constant": true,
     "inputs": [],
     "name": "paused",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -780,7 +1044,11 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "uint256", "name": "_loanId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_loanId",
+        "type": "uint256"
+      }
     ],
     "name": "payBackLoan",
     "outputs": [],
@@ -809,9 +1077,21 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "address", "name": "from", "type": "address" },
-      { "internalType": "address", "name": "to", "type": "address" },
-      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
     ],
     "name": "safeTransferFrom",
     "outputs": [],
@@ -822,10 +1102,26 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "address", "name": "from", "type": "address" },
-      { "internalType": "address", "name": "to", "type": "address" },
-      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
-      { "internalType": "bytes", "name": "_data", "type": "bytes" }
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_data",
+        "type": "bytes"
+      }
     ],
     "name": "safeTransferFrom",
     "outputs": [],
@@ -836,8 +1132,16 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "address", "name": "to", "type": "address" },
-      { "internalType": "bool", "name": "approved", "type": "bool" }
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "approved",
+        "type": "bool"
+      }
     ],
     "name": "setApprovalForAll",
     "outputs": [],
@@ -848,10 +1152,20 @@
   {
     "constant": true,
     "inputs": [
-      { "internalType": "bytes4", "name": "interfaceId", "type": "bytes4" }
+      {
+        "internalType": "bytes4",
+        "name": "interfaceId",
+        "type": "bytes4"
+      }
     ],
     "name": "supportsInterface",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -860,7 +1174,13 @@
     "constant": true,
     "inputs": [],
     "name": "symbol",
-    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -869,7 +1189,13 @@
     "constant": true,
     "inputs": [],
     "name": "totalActiveLoans",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -878,7 +1204,13 @@
     "constant": true,
     "inputs": [],
     "name": "totalNumLoans",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -886,9 +1218,21 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "address", "name": "from", "type": "address" },
-      { "internalType": "address", "name": "to", "type": "address" },
-      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
     ],
     "name": "transferFrom",
     "outputs": [],
@@ -899,7 +1243,11 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "address", "name": "newOwner", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
     ],
     "name": "transferOwnership",
     "outputs": [],
@@ -969,7 +1317,11 @@
         "name": "_erc20Currency",
         "type": "address"
       },
-      { "internalType": "bool", "name": "_setAsWhitelisted", "type": "bool" }
+      {
+        "internalType": "bool",
+        "name": "_setAsWhitelisted",
+        "type": "bool"
+      }
     ],
     "name": "whitelistERC20Currency",
     "outputs": [],
@@ -980,8 +1332,16 @@
   {
     "constant": false,
     "inputs": [
-      { "internalType": "address", "name": "_nftContract", "type": "address" },
-      { "internalType": "bool", "name": "_setAsWhitelisted", "type": "bool" }
+      {
+        "internalType": "address",
+        "name": "_nftContract",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "_setAsWhitelisted",
+        "type": "bool"
+      }
     ],
     "name": "whitelistNFTContract",
     "outputs": [],

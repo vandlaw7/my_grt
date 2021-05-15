@@ -1,13 +1,13 @@
 {
-  "name": "Enft",
+  "name": "Nftfi",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ vandlaw7/Enft",
-    "create-local": "graph create --node http://localhost:8020/ vandlaw7/Enft",
-    "remove-local": "graph remove --node http://localhost:8020/ vandlaw7/Enft",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 vandlaw7/Enft"
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ jjhjoa2494/Nftfi",
+    "create-local": "graph create --node http://localhost:8020/ jjhjoa2494/Nftfi",
+    "remove-local": "graph remove --node http://localhost:8020/ jjhjoa2494/Nftfi",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 jjhjoa2494/Nftfi"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.20.0",

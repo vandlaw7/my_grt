@@ -12,51 +12,297 @@ import {
   BigDecimal
 } from "@graphprotocol/graph-ts";
 
-export class ExampleEntity extends Entity {
-  constructor(id: string) {
+// export class ExampleEntity extends Entity {
+//   constructor(id: string) {
+//     super();
+//     this.set("id", Value.fromString(id));
+//   }
+
+//   save(): void {
+//     let id = this.get("id");
+//     assert(id !== null, "Cannot save ExampleEntity entity without an ID");
+//     assert(
+//       id.kind == ValueKind.STRING,
+//       "Cannot save ExampleEntity entity with non-string ID. " +
+//         'Considering using .toHex() to convert the "id" to a string.'
+//     );
+//     store.set("ExampleEntity", id.toString(), this);
+//   }
+
+//   static load(id: string): ExampleEntity | null {
+//     return store.get("ExampleEntity", id) as ExampleEntity | null;
+//   }
+
+//   get id(): string {
+//     let value = this.get("id");
+//     return value.toString();
+//   }
+
+//   set id(value: string) {
+//     this.set("id", Value.fromString(value));
+//   }
+
+//   get count(): BigInt | null {
+//     let value = this.get("count");
+//     if (value === null || value.kind == ValueKind.NULL) {
+//       return null;
+//     } else {
+//       return value.toBigInt();
+//     }
+//   }
+
+//   set count(value: BigInt | null) {
+//     if (value === null) {
+//       this.unset("count");
+//     } else {
+//       this.set("count", Value.fromBigInt(value as BigInt));
+//     }
+//   }
+
+//   get newAdminFee(): BigInt | null {
+//     let value = this.get("newAdminFee");
+//     if (value === null || value.kind == ValueKind.NULL) {
+//       return null;
+//     } else {
+//       return value.toBigInt();
+//     }
+//   }
+
+//   set newAdminFee(value: BigInt | null) {
+//     if (value === null) {
+//       this.unset("newAdminFee");
+//     } else {
+//       this.set("newAdminFee", Value.fromBigInt(value as BigInt));
+//     }
+//   }
+// }
+
+export class LoanStartedEntity extends Entity {
+  constructor(loanId: string) {
     super();
-    this.set("id", Value.fromString(id));
+    this.set("loanId", Value.fromString(loanId));
   }
 
   save(): void {
-    let id = this.get("id");
-    assert(id !== null, "Cannot save ExampleEntity entity without an ID");
+    let id = this.get("loanId");
+    assert(id !== null, "Cannot save LoanStartedEntity entity without an ID");
     assert(
       id.kind == ValueKind.STRING,
-      "Cannot save ExampleEntity entity with non-string ID. " +
+      "Cannot save LoanStartedEntity entity with non-string ID. " +
         'Considering using .toHex() to convert the "id" to a string.'
     );
-    store.set("ExampleEntity", id.toString(), this);
+    store.set("LoanStartedEntity", id.toString(), this);
   }
 
-  static load(id: string): ExampleEntity | null {
-    return store.get("ExampleEntity", id) as ExampleEntity | null;
+  static load(id: string): LoanStartedEntity | null {
+    return store.get("LoanStartedEntity", id) as LoanStartedEntity | null;
   }
 
   get id(): string {
-    let value = this.get("id");
+    let value = this.get("loanId");
     return value.toString();
   }
 
   set id(value: string) {
-    this.set("id", Value.fromString(value));
+    this.set("loanId", Value.fromString(value));
   }
 
-  get count(): BigInt {
-    let value = this.get("count");
-    return value.toBigInt();
+  // get loanId(): BigInt | null {
+  //   let value = this.get("loanId");
+  //   if (value === null || value.kind == ValueKind.NULL) {
+  //     return null;
+  //   } else {
+  //     return value.toBigInt();
+  //   }
+  // }
+
+  // set loanId(value: BigInt | null) {
+  //   if (value === null) {
+  //     this.unset("loanId");
+  //   } else {
+  //     this.set("loanId", Value.fromBigInt(value as BigInt));
+  //   }
+  // }
+
+  get borrower(): BigInt | null {
+    let value = this.get("borrower");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
   }
 
-  set count(value: BigInt) {
-    this.set("count", Value.fromBigInt(value));
+  set borrower(value: BigInt | null) {
+    if (value === null) {
+      this.unset("borrower");
+    } else {
+      this.set("borrower", Value.fromBigInt(value as BigInt));
+    }
   }
 
-  get newAdminFee(): BigInt {
-    let value = this.get("newAdminFee");
-    return value.toBigInt();
+  get lender(): BigInt | null {
+    let value = this.get("lender");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
   }
 
-  set newAdminFee(value: BigInt) {
-    this.set("newAdminFee", Value.fromBigInt(value));
+  set lender(value: BigInt | null) {
+    if (value === null) {
+      this.unset("lender");
+    } else {
+      this.set("lender", Value.fromBigInt(value as BigInt));
+    }
+  }
+
+  get loanPrincipalAmount(): BigInt | null {
+    let value = this.get("loanPrincipalAmount");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set loanPrincipalAmount(value: BigInt | null) {
+    if (value === null) {
+      this.unset("loanPrincipalAmount");
+    } else {
+      this.set("loanPrincipalAmount", Value.fromBigInt(value as BigInt));
+    }
+  }
+
+  get maximumRepaymentAmount(): BigInt | null {
+    let value = this.get("maximumRepaymentAmount");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set maximumRepaymentAmount(value: BigInt | null) {
+    if (value === null) {
+      this.unset("maximumRepaymentAmount");
+    } else {
+      this.set("maximumRepaymentAmount", Value.fromBigInt(value as BigInt));
+    }
+  }
+
+  get nftCollateralId(): BigInt | null {
+    let value = this.get("nftCollateralId");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set nftCollateralId(value: BigInt | null) {
+    if (value === null) {
+      this.unset("nftCollateralId");
+    } else {
+      this.set("nftCollateralId", Value.fromBigInt(value as BigInt));
+    }
+  }
+
+  get loanStartTime(): BigInt | null {
+    let value = this.get("loanStartTime");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set loanStartTime(value: BigInt | null) {
+    if (value === null) {
+      this.unset("loanStartTime");
+    } else {
+      this.set("loanStartTime", Value.fromBigInt(value as BigInt));
+    }
+  }
+
+  get loanDuration(): BigInt | null {
+    let value = this.get("loanDuration");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set loanDuration(value: BigInt | null) {
+    if (value === null) {
+      this.unset("loanDuration");
+    } else {
+      this.set("loanDuration", Value.fromBigInt(value as BigInt));
+    }
+  }
+
+  get loanInterestRateForDurationInBasisPoints(): BigInt | null {
+    let value = this.get("loanInterestRateForDurationInBasisPoints");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set loanInterestRateForDurationInBasisPoints(value: BigInt | null) {
+    if (value === null) {
+      this.unset("loanInterestRateForDurationInBasisPoints");
+    } else {
+      this.set(
+        "loanInterestRateForDurationInBasisPoints",
+        Value.fromBigInt(value as BigInt)
+      );
+    }
+  }
+
+  get nftCollateralContract(): BigInt | null {
+    let value = this.get("nftCollateralContract");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set nftCollateralContract(value: BigInt | null) {
+    if (value === null) {
+      this.unset("nftCollateralContract");
+    } else {
+      this.set("nftCollateralContract", Value.fromBigInt(value as BigInt));
+    }
+  }
+
+  get loanERC20Denomination(): BigInt | null {
+    let value = this.get("loanERC20Denomination");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set loanERC20Denomination(value: BigInt | null) {
+    if (value === null) {
+      this.unset("loanERC20Denomination");
+    } else {
+      this.set("loanERC20Denomination", Value.fromBigInt(value as BigInt));
+    }
+  }
+
+  get interestIsProRated(): boolean {
+    let value = this.get("interestIsProRated");
+    return value.toBoolean();
+  }
+
+  set interestIsProRated(value: boolean) {
+    this.set("interestIsProRated", Value.fromBoolean(value));
   }
 }

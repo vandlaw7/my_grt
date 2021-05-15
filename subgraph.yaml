@@ -4,9 +4,9 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: Contract
-    network: rinkeby
+    network: mainnet
     source:
-      address: "0xC80a7f519b10bE09D0f7B43bF91C559131Db0E11"
+      address: "0x5a1f1fee27d647911A7d21C60dcd6A7B356a9dC0"
       abi: Contract
     mapping:
       kind: ethereum/events
@@ -25,46 +25,34 @@ dataSources:
         - PauserRemoved
         - Transfer
         - Unpaused
-        - WhiteHandleList
+        # - WhitelistNFTContractCall
       abis:
         - name: Contract
           file: ./abis/Contract.json
       eventHandlers:
-        - event: AdminFeeUpdated(uint256)
-          handler: handleAdminFeeUpdated
-        - event: Approval(indexed address,indexed address,indexed uint256)
-          handler: handleApproval
-        - event: ApprovalForAll(indexed address,indexed address,bool)
-          handler: handleApprovalForAll
-        - event: LoanLiquidated(uint256,address,address,uint256,uint256,uint256,uint256,address)
-          handler: handleLoanLiquidated
-        - event: LoanRepaid(uint256,address,address,uint256,uint256,uint256,uint256,address,address)
-          handler: handleLoanRepaid
+        # - event: AdminFeeUpdated(uint256)
+        #   handler: handleAdminFeeUpdated
+        # - event: Approval(indexed address,indexed address,indexed uint256)
+        #   handler: handleApproval
+        # - event: ApprovalForAll(indexed address,indexed address,bool)
+        #   handler: handleApprovalForAll
+        # - event: LoanLiquidated(uint256,address,address,uint256,uint256,uint256,uint256,address)
+        #   handler: handleLoanLiquidated
+        # - event: LoanRepaid(uint256,address,address,uint256,uint256,uint256,uint256,address,address)
+        #   handler: handleLoanRepaid
         - event: LoanStarted(uint256,address,address,uint256,uint256,uint256,uint256,uint256,uint256,address,address,bool)
           handler: handleLoanStarted
-        - event: OwnershipTransferred(address,address)
-          handler: handleOwnershipTransferred
-        - event: Paused(address)
-          handler: handlePaused
-        - event: PauserAdded(indexed address)
-          handler: handlePauserAdded
-        - event: PauserRemoved(indexed address)
-          handler: handlePauserRemoved
-        - event: Transfer(indexed address,indexed address,indexed uint256)
-          handler: handleTransfer
-        - event: Unpaused(address)
-          handler: handleUnpaused
+        # - event: OwnershipTransferred(address,address)
+        #   handler: handleOwnershipTransferred
+        # - event: Paused(address)
+        #   handler: handlePaused
+        # - event: PauserAdded(indexed address)
+        #   handler: handlePauserAdded
+        # - event: PauserRemoved(indexed address)
+        #   handler: handlePauserRemoved
+        # - event: Transfer(indexed address,indexed address,indexed uint256)
+        #   handler: handleTransfer
+        # - event: Unpaused(address)
+        #   handler: handleUnpaused
       file: ./src/mapping.ts
 
-
-
-
-export class WhitelistNFTContractCall extends ethereum.Call {
-  get inputs(): WhitelistNFTContractCall__Inputs {
-    return new WhitelistNFTContractCall__Inputs(this);
-  }
-
-  get outputs(): WhitelistNFTContractCall__Outputs {
-    return new WhitelistNFTContractCall__Outputs(this);
-  }
-}
